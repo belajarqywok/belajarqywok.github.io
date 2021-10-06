@@ -1,5 +1,17 @@
 {
-  "nickname" : "qywok",
-  "fullname" : "Al-Fariqy Raihan Azhwar",
-  "age"      : 17
+  "nickname"      : "qywok",
+  "fullname"      : "Al-Fariqy Raihan Azhwar",
+  "age"           : 17,
+  "date_of_birth" : "**/**/2004",
+  "location"      : "Jakarta, Indonesian",
+  "education"     : [
+    {
+      "institution" : "SMPN 275 Jakarta",
+      "major"       : "Science, Social, & Politics"
+    },
+    {
+      "institution" : "SMK PGRI 1 Jakarta",
+      "major"       : "Multimedia & Computer Science"
+    }
+  ]
 }
