@@ -15,7 +15,9 @@ VERSION:	Versoin Number
   font-style: normal;
   font-display: swap;
 }
-
+defaultFont {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
 body {
   line-height: 1.2;
   font-family: "Roboto", sans-serif;
