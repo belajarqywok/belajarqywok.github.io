@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/dark.css">
         <link id="color-changer" rel="stylesheet" href="css/colors/color-0.css">
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     </head>
 
     <body class="dark">
@@ -57,7 +58,23 @@
                                     </div>
                                     <!-- /.author-desc -->
                                 </div> <!-- /.about-author -->
-                                <p>Usually, people call me ["Raihan", "Rehan", "qywok", "kywok", "Han", "Kyw", "Wok", "Akywok"]. I am a student at a university in Jakarta. I am a humorous, intellectual, critical, and ambivert person.<br><br>My hobbies are cooking, reading, caring for plants, and making application programs that can make my life easier. Usually, the time I have is spent to channel my hobbies, go to college, and learn new things about science and technology.<br><br>I am very interested in the field of software engineering, especially backend engineering, networking, devops engineering, information security, and blockchain.</p>
+                                <div id="par1">
+                                    <p>Usually, people call me ["Raihan", "Rehan", "qywok", "kywok", "Han", "Kyw", "Wok", "Akywok"]. I am a student at a university in Jakarta. I am a humorous, intellectual, critical, and ambivert person.</p>
+                                </div>
+                                <span id="typed-par1"></span>
+                                <br><br>
+                                
+                                <div id="par2">
+                                    <p id="msg1"></p>
+                                </div>
+                                <span id="typed-par2"></span>
+                                <br><br>
+                                
+                                <div id="par3">
+                                    <p id="msg2"></p>
+                                </div>
+                                <span id="typed-par3"></span>
+                                <br>
                             </div> <!-- /.col -->
 
                             <div class="col-xs-12 col-md-6">
@@ -184,6 +201,32 @@
         <script src="js/jquery-validation.min.js"></script>
         <script src="js/main.js"></script>
         <script>
+            // animation
+            var par1 = new Typed('#typed-par1',{
+                stringsElement: '#par1',
+                backSpeed: 10,
+                typeSpeed: 10
+            });
+            
+            setTimeout(function(){
+                document.getElementById('msg1').innerHTML="My hobbies are cooking, reading, caring for plants, and making application programs that can make my life easier. Usually, the time I have is spent to channel my hobbies, go to college, and learn new things about science and technology.";
+                var par2 = new Typed('#typed-par2',{
+                stringsElement: '#par2',
+                backSpeed: 10,
+                typeSpeed: 10
+                });
+            },7600);
+
+            setTimeout(function(){
+                document.getElementById('msg2').innerHTML="I am very interested in the field of software engineering, especially backend engineering, networking, devops engineering, information security, and blockchain.";
+                var par3 = new Typed('#typed-par3',{
+                    stringsElement: '#par3',
+                    backSpeed: 10,
+                    typeSpeed: 10
+                });
+            },16800);
+            
+            // get api
             const apiEndpoint = "https://api.ipify.org/?format=json";
             const fetchPromise = fetch(apiEndpoint);
             fetchPromise.then(response => {
