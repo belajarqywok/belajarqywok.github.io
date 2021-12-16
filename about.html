@@ -168,6 +168,76 @@
                                         </div>
                                         <div class="skill-lavel" data-skill-value="62%"></div>
                                     </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">Openshift</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="42%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">AWS</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="59%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">Heroku</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="78%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">Vagrant</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="71%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">terraform</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="72%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">Wordpress</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="70%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">Adobe Illustrator</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="90%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">Adobe Audition</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="73%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">Adobe Premiere Pro</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="76%"></div>
+                                    </div> <!-- /.progress -->
+                                    <div class="progress clear">
+                                        <div class="skill-name">Adobe Photoshop</div>
+                                        <div class="skill-bar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="skill-lavel" data-skill-value="79%"></div>
+                                    </div> <!-- /.progress -->
                                 </div> <!-- /.skill-wrapper -->
                             </div> <!-- /.col -->
                         </div> <!-- /.row -->
@@ -176,7 +246,15 @@
                     <br>
                     <br>
                     <div class="border-top text-center border-dark py-5">
-                        <p class="mb-0 text-light">your ip address : <p id="yourIp"></p></p>
+                        <p class="mb-0 text-light"><b>your ip address :</b> <p id="yourIp"></p></p>
+                    </div>
+                    <br>
+				    <div class="border-top text-center border-dark py-5">
+                        <p class="mb-0 text-light"><b>your location :</b> <p id="yourLocation"></p></p>
+                    </div>
+                    <br>
+			        <div class="border-top text-center border-dark py-5">
+                        <p class="mb-0 text-light"><b>visitors :</b> <p id="visitors">999M</p></p>
                     </div>
                     <br>
                     <br>
@@ -228,13 +306,21 @@
                 });
             },16800);
             
-            // get api
-            const apiEndpoint = "https://api.ipify.org/?format=json";
-            const fetchPromise = fetch(apiEndpoint);
-            fetchPromise.then(response => {
+            // ip address request
+            const ipAddressEndpoint = "https://api.ipify.org/?format=json";
+            const ipAddressFetchPromise = fetch(ipAddressEndpoint);
+            ipAddressFetchPromise.then(response => {
                 return response.json();
             }).then(data => {
                 document.getElementById("yourIp").innerHTML=`${data.ip}`;
+		        // find location
+	            const locationEndpoint = `https://ipapi.co/${data.ip}/json/`;
+                const locationFetchPromise = fetch(locationEndpoint);
+                locationFetchPromise.then(response => {
+                    return response.json();
+                }).then(data => {
+                    document.getElementById("yourLocation").innerHTML=`${data.city}/${data.country_name}`;
+                });
             });
         </script>
     </body>
