@@ -75,7 +75,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="about.html" target="_blank" class="hex-content">
+                                        <a href="about.html" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="tf-dial"></i>
@@ -96,7 +96,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="https://github.com/belajarqywok" target="_blank" class="hex-content">
+                                        <a href="https://github.com/belajarqywok" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="fab fa-github"></i>
@@ -117,7 +117,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="https://www.linkedin.com/in/al-fariqy-raihan-81b8a019a/" target="_blank" class="hex-content">
+                                        <a href="https://www.linkedin.com/in/al-fariqy-raihan-81b8a019a/" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="fab fa-linkedin"></i>
@@ -138,7 +138,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="https://www.instagram.com/qywok_exploiter_357/" target="_blank" class="hex-content">
+                                        <a href="https://www.instagram.com/qywok_exploiter_357/" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="fab fa-instagram"></i>
@@ -159,7 +159,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="https://www.facebook.com/raihan.alfariqy.9/" target="_blank" class="hex-content">
+                                        <a href="https://www.facebook.com/raihan.alfariqy.9/" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="fab fa-facebook-square"></i>
@@ -180,7 +180,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="https://twitter.com/fariqyal/" target="_blank" class="hex-content">
+                                        <a href="https://twitter.com/fariqyal/" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="fab fa-twitter"></i>
@@ -201,7 +201,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="https://opensea.io/qywok/" target="_blank" class="hex-content">
+                                        <a href="https://opensea.io/qywok/" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="fas fa-ship"></i>
@@ -217,6 +217,16 @@
                                 <br>
                                 <div class="border-top text-center border-dark py-5">
                                     <p class="mb-0 text-light"><b>your ip address :</b> <p id="yourIp"></p></p>
+                                </div>
+                                <br>
+                                <br>
+				<div class="border-top text-center border-dark py-5">
+                                    <p class="mb-0 text-light"><b>your location :</b> <p id="yourLocation"></p></p>
+                                </div>
+                                <br>
+                                <br>
+			        <div class="border-top text-center border-dark py-5">
+                                    <p class="mb-0 text-light"><b>visitors :</b> <p id="visitors"></p></p>
                                 </div>
                                 <br>
                                 <br>
@@ -283,14 +293,16 @@
                 });
             }, 3000); 
             
-            // api request
-            const apiEndpoint = "https://api.ipify.org/?format=json";
-            const fetchPromise = fetch(apiEndpoint);
+            // ip address request
+            const ipAddressEndpoint = "https://api.ipify.org/?format=json";
+            const ipAddressFetchPromise = fetch(ipAddressEndpoint);
             fetchPromise.then(response => {
                 return response.json();
-            }).then(data => {
-                document.getElementById("yourIp").innerHTML=`${data.ip}`;
+            }).then(address => {
+                document.getElementById("yourIp").innerHTML=`${address.ip}`;
             });
+		
+	    // find location
         </script>
     </body>
 </html>
