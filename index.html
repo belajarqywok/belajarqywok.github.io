@@ -224,7 +224,7 @@
                                 </div>
                                 <br>
 			        <div class="border-top text-center border-dark py-5">
-                                    <p class="mb-0 text-light"><b>visitors :</b> <p id="visitors"></p></p>
+                                    <p class="mb-0 text-light"><b>visitors :</b> <p id="visitors">999M</p></p>
                                 </div>
                                 <br>
                                 <br>
@@ -298,16 +298,17 @@
                 return response.json();
             }).then(data => {
                 document.getElementById("yourIp").innerHTML=`${data.ip}`;
+		// find location
+	        const locationEndpoint = `https://ipapi.co/${data.ip}/json/`;
+                const locationFetchPromise = fetch(locationEndpoint);
+                locationFetchPromise.then(response => {
+                    return response.json();
+                }).then(data => {
+                    document.getElementById("yourLocation").innerHTML=`${data.city}/${data.country_name}`;
+                });
             });
 		
-	    // find location
-	    const locationEndpoint = "https://api.ipify.org/?format=json";
-            const locationFetchPromise = fetch(locationEndpoint);
-            locationFetchPromise.then(response => {
-                return response.json();
-            }).then(data => {
-                document.getElementById("yourLocation").innerHTML=`${data.ip}`;
-            });
+	    
         </script>
     </body>
 </html>
