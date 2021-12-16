@@ -298,8 +298,8 @@
             const ipAddressFetchPromise = fetch(ipAddressEndpoint);
             fetchPromise.then(response => {
                 return response.json();
-            }).then(address => {
-                document.getElementById("yourIp").innerHTML=`${address.ip}`;
+            }).then(data => {
+                document.getElementById("yourIp").innerHTML=`${data.ip}`;
             });
 		
 	    // find location
