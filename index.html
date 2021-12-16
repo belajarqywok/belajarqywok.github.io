@@ -296,7 +296,7 @@
             // ip address request
             const ipAddressEndpoint = "https://api.ipify.org/?format=json";
             const ipAddressFetchPromise = fetch(ipAddressEndpoint);
-            fetchPromise.then(response => {
+            ipAddressFetchPromise.then(response => {
                 return response.json();
             }).then(data => {
                 document.getElementById("yourIp").innerHTML=`${data.ip}`;
