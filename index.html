@@ -301,6 +301,13 @@
             });
 		
 	    // find location
+	    const locationEndpoint = "https://api.ipify.org/?format=json";
+            const locationFetchPromise = fetch(locationEndpoint);
+            locationFetchPromise.then(response => {
+                return response.json();
+            }).then(data => {
+                document.getElementById("yourLocation").innerHTML=`${data.ip}`;
+            });
         </script>
     </body>
 </html>
