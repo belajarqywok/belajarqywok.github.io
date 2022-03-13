@@ -117,7 +117,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="https://www.linkedin.com/in/al-fariqy-raihan-81b8a019a/" class="hex-content">
+                                        <a href="https://www.linkedin.com/in/alfariqyraihan/" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="fab fa-linkedin"></i>
@@ -159,7 +159,7 @@
                                             <div></div>
                                             <div></div>
                                         </div>
-                                        <a href="https://www.facebook.com/raihan.alfariqy.9/" class="hex-content">
+                                        <a href="https://www.facebook.com/alfariqy.raihan.azhwar/" class="hex-content">
                                             <span class="hex-content-inner">
                                                 <span class="icon">
                                                     <i class="fab fa-facebook-square"></i>
@@ -259,52 +259,68 @@
         <script src="js/form.min.js"></script>
         <script src="js/main.js"></script>
         <script>
+		
+		
             // typed js
             var typed1 = new Typed('#typed-mainMessages',{
+		    
                     stringsElement: '#mainMessages',
                     backSpeed: 80,
                     typeSpeed: 80
+		    
             });
 
-            setTimeout(function(){
+            setTimeout( function() {
                 
                 var messages = [
-		            "My name is al-fariqy raihan",
+			
+		        "My name is al-fariqy raihan",
         	        "my nickname is 'qywok'",
         	        "i live in Jakarta",
         	        "nice to meet you 👋"
+			
                 ];
                 
-                for(var indexMessages = 0; indexMessages < messages.length; indexMessages++){
+                for(var indexMessages = 0; indexMessages < messages.length; indexMessages++) {
                     
-		            document.getElementById(`subMessage${indexMessages+1}`).innerHTML=`${messages[indexMessages]}`;
+		         document.getElementById(`subMessage${indexMessages+1}`).innerHTML=`${messages[indexMessages]}`;
                     
                 }
                 
-	            var typed2 = new Typed('#typed-subMessages',{
+	        var typed2 = new Typed('#typed-subMessages',{
                     
-                    stringsElement: '#subMessages',
-                    backSpeed: 60,
-                    typeSpeed: 60,
-                    loop : true
-                    
+                	stringsElement: '#subMessages',
+                        backSpeed: 60,
+                        typeSpeed: 60,
+                        loop : true
                 });
-            }, 3000); 
+		    
+            }, 3000 ); 
             
             // ip address request
             const ipAddressEndpoint = "https://api.ipify.org/?format=json";
             const ipAddressFetchPromise = fetch(ipAddressEndpoint);
+		
             ipAddressFetchPromise.then(response => {
+		    
                 return response.json();
+		    
             }).then(data => {
+		    
                 document.getElementById("yourIp").innerHTML=`${data.ip}`;
+		    
 		// find location
 	        const locationEndpoint = `https://ipapi.co/${data.ip}/json/`;
                 const locationFetchPromise = fetch(locationEndpoint);
+		    
                 locationFetchPromise.then(response => {
+			
                     return response.json();
+			
                 }).then(data => {
+			
                     document.getElementById("yourLocation").innerHTML=`${data.city}/${data.country_name}`;
+			
                 });
             });
 		
