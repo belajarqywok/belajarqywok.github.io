@@ -1,17 +1,73 @@
 {
-  "nickname"      : "qywok",
+  
+  "nickname"      : ["qywok", "raihan", "rehan", "kiwok", "kywok", "qywo", "akywok"],
   "fullname"      : "Al-Fariqy Raihan Azhwar",
   "age"           : 17,
-  "date_of_birth" : "**/**/2003",
+  "date_of_birth" : "**/**/****",
   "location"      : "Jakarta, Indonesia",
+  "email"         : "alfariqyraihan@gmail.com",
+  
   "education"     : [
+    
     {
       "institution" : "SMPN 275 Jakarta",
       "major"       : "Science, Social, & Politics"
     },
+    
     {
       "institution" : "SMK PGRI 1 Jakarta",
       "major"       : "Multimedia & Computer Science"
+    },
+    
+    {
+      "institution" : "Indraprasta University",
+      "major"       : "Informatics Engineering / Computer Science"
     }
+    
+  ],
+  
+  "social_media" : [
+    
+    {
+      "name" : "my_blog",
+      "url"  : "alfariqyraihan.id"
+    },
+    
+    {
+      "name" : "instagram",
+      "url"  : "https://www.instagram.com/qywok_exploiter_357/"
+    },
+    
+    {
+      "name" : "facebook",
+      "url"  : "https://www.facebook.com/alfariqy.raihan.azhwar/"
+    },
+    
+    {
+      "name" : "linkedin",
+      "url"  : "https://www.linkedin.com/in/alfariqyraihan/"
+    },
+    
+    {
+      "name" : "github",
+      "url"  : "https://github.com/belajarqywok/"
+    },
+    
+    {
+      "name" : "opensea",
+      "url"  : "https://opensea.io/qywok"
+    },
+    
+    {
+      "name" : "twitter",
+      "url"  : "https://twitter.com/fariqyal"
+    },
+    
+    {
+      "name" : "pinterest",
+      "url"  : "https://id.pinterest.com/qywok_/"
+    }
+    
   ]
+  
 }
